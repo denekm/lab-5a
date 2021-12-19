@@ -30,8 +30,12 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-
+  let multiply = a * b;
+  let message = `The product of ${a} and ${b} is ${multiply}.`;
+  return[multiply, message];
 }
+let multiplyReturn = multiply(5,9);
+console.log(multiplyReturn);
 
 // Here is the test for multiply(); uncomment it to run it
 // testMultiply(5,9);
