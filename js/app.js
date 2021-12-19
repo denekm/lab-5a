@@ -55,8 +55,16 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-
+  let sumAB = sum(a,b);
+  let sumABC = sum(sumAB[0],c); 
+  let multiplyAB = multiply(a,b);
+  let muliplyABC = multiply(multiplyAB[0],c);
+  let messageSum = `${a} and ${b} and ${c} sum to ${sumABC[0]}.`;
+  let messageMultiply = `The product of ${a} and ${b} and ${c} is ${multiplyABC[0]}.`;
+  return[sumABC[0], multiplyABC[0],  messageSum, messageMultiply];
 }
+let sumAndMultiplyReturn = sumAndMultiply(4,7,5);
+console.log(sumAndMultiplyReturn);
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
 // testSumAndMultiply(4,7,5);
