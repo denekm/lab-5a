@@ -13,6 +13,7 @@ function sum(a, b) { //eslint-disable-line
   let message =`The sum of ${a} and ${b} is ${sum}.`;
   return[sum, message];
 }
+
 let sumReturn = sum(4,7);
 console.log(sumReturn);
 // Here is the test for sum(); uncomment it to run it
@@ -56,12 +57,12 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
   let sumAB = sum(a,b);
-  let sumABC = sum(sumAB[0],c); 
+  let sumABC = sum(sumAB[0],c);
   let multiplyAB = multiply(a,b);
-  let muliplyABC = multiply(multiplyAB[0],c);
+  let multiplyABC = multiply(multiplyAB[0],c);
   let messageSum = `${a} and ${b} and ${c} sum to ${sumABC[0]}.`;
   let messageMultiply = `The product of ${a} and ${b} and ${c} is ${multiplyABC[0]}.`;
-  return[sumABC[0], multiplyABC[0],  messageSum, messageMultiply];
+  return[sumABC[0], multiplyABC[0], messageSum, messageMultiply];
 }
 let sumAndMultiplyReturn = sumAndMultiply(4,7,5);
 console.log(sumAndMultiplyReturn);
@@ -73,7 +74,8 @@ console.log(sumAndMultiplyReturn);
 
 /////////////////////////////////////
 /* Problem 4
-Write a function called sumArray() that takes in an array of numbers as its single argument and then returns an array where the first element is the sum of the numbers in the array, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
+
+ and then returns an array where the first element is the sum of the numbers in the array, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
 
 "2,3,4 was passed in as an array of numbers, and 9 is their sum."
 
@@ -86,7 +88,14 @@ let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
 
+  let firstSum = sum(sumArr[0], sumArr[1]);
+  let totalSum = sum(firstSum[0], sumArr[2]);
+  let messageSumArray = `${sumArr[0]},${sumArr[1]},${sumArr[2]} was passed in as an array of numbers, and ${totalSum[0]} is their sum.`;
+  return[totalSum[0], messageSumArray];
 }
+
+let sumArrayReturn = sumArray(testArray);
+console.log(sumArrayReturn);
 
 // Here is the test for sumArray(); uncomment it to run it
 
